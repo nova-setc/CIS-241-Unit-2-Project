@@ -3,15 +3,20 @@ DROP DATABASE IF EXISTS todo_app;
 CREATE DATABASE todo_app;
 USE todo_app;
 
+-- Drop users table if it exists
+DROP TABLE IF EXISTS users;
+
 -- Create users table
 CREATE TABLE users (
     user_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
     date_added DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Drop tasks table if it exists (for repeatable dev imports)
+DROP TABLE IF EXISTS tasks;
 
 -- Create tasks table
 CREATE TABLE tasks (
@@ -25,8 +30,8 @@ CREATE TABLE tasks (
 );
 
 -- Optional: Create a non-root MySQL user for development
--- (This is not required but shows you’re thinking like a pro)
 DROP USER IF EXISTS 'todo_admin'@'localhost';
 CREATE USER 'todo_admin'@'localhost' IDENTIFIED BY 'todo_password';
 GRANT ALL PRIVILEGES ON todo_app.* TO 'todo_admin'@'localhost';
 FLUSH PRIVILEGES;
+
