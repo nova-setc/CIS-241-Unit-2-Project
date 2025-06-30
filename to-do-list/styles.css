@@ -1,0 +1,265 @@
+/* styles.css */
+/* General Body Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* For pages that aren't centered vertically, like the dashboard */
+body.dashboard-body {
+    display: block;
+}
+
+/* Authentication Container (for Login and Register) */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.form-container h2 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 2rem;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    color: #4b5563;
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: #374151;
+    line-height: 1.25;
+    transition: border-color 0.2s;
+    box-sizing: border-box; /* Important for padding */
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form-input.input-error {
+    border-color: #ef4444;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.form-link {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.875rem; /* 14px */
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.form-link:hover {
+    color: #1d4ed8;
+}
+
+/* Error Messages */
+.error-text {
+    color: #ef4444;
+    font-size: 0.75rem; /* 12px */
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* Dashboard Navigation */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem; /* 64px */
+}
+
+.navbar-brand {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-user span {
+    color: #1f2937;
+    margin-right: 1rem;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* Dashboard Content */
+.dashboard-container {
+    max-width: 768px; /* 48rem */
+    margin: 2.5rem auto;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h2 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* Add Task Form */
+.add-task-form {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.add-task-input {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.add-task-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.task-text {
+    color: #1f2937;
+}
+
+.task-text.task-completed {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+}
+
+.task-action-btn {
+    background: none;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.task-action-btn.complete {
+    color: #10b981;
+    margin-right: 0.5rem;
+}
+
+.task-action-btn.complete:hover {
+    color: #059669;
+}
+
+.task-action-btn.delete {
+    color: #ef4444;
+}
+
+.task-action-btn.delete:hover {
+    color: #dc2626;
+}
+
+.no-tasks {
+    color: #6b7280;
+}
