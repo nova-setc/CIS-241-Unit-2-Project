@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'todo_app';
-$username = 'root';
-$password = '';
+$username = 'todo_admin';
+$password = 'todo_password';
 
 try {
     $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
