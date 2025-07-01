@@ -4,6 +4,10 @@ if (isset($_GET['registered']) && $_GET['registered'] === 'true') {
     echo '<p class="success-message">Registration successful! You can now log in.</p>';
 } 
 
+if (isset($_GET['success']) && $_GET['success'] === 'logout') {
+    echo '<p class="success-message">You have successfully logged out!</p>';
+}
+
 if (isset($_GET['error'])) {
     switch ($_GET['error']) {
         case 'missing_fields':

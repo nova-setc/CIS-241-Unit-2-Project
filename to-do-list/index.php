@@ -3,7 +3,7 @@ session_start();
 require_once(__DIR__ . '/models/db.php');
 require_once(__DIR__ . '/models/task_model.php');
 
-$action = $_GET['action'] ?? 'login';
+$action = $_GET['action'] ?? 'login_view';
 
 switch ($action) {
     case 'login_view':
