@@ -10,7 +10,7 @@ $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
 
 try {
-    $query = "SELECT * FROM todo_app 
+    $query = "SELECT * FROM users 
               WHERE email = :email 
               OR username = :username";
     $statement = $pdo->prepare($query);
@@ -26,44 +26,44 @@ try {
         (!$password) ||
         (!$confirm_password)
     ) {
-        header("Location: /to-do-list/index.php?action=register&error=missing_fields");
+        header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=missing_fields");
         exit;
     }
 
     // Password confirmed? 
     if ($password !== $confirm_password) {
-        header("Location: /to-do-list/index.php?action=register&error=password_mismatch");
+        header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=password_mismatch");
         exit;
     }
 
     // Email already exists?
-    if ($user['email'] === $email) {
-        header("Location: /to-do-list/index.php?action=register&error=email_exists");
+    if ($user && $user['email'] === $email) {
+        header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=email_exists");
         exit;
     }
 
     // Username already exists?
-    if ($user['username'] === $userName) {
-        header("Location: /to-do-list/index.php?action=register&error=username_exists");
+    if ($user && $user['username'] === $userName) {
+        header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=username_exists");
         exit;
     }
 
     // Complete registration, insert user into DB
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $query = "INSERT INTO todo_app 
-                (username, email, password)
+    $query = "INSERT INTO users 
+                (username, email, password_hash)
               VALUES
-                (:username, :email, :password)";
+                (:username, :email, :password_hash)";
     $statement = $pdo->prepare($query);
     $statement->bindValue(':username', $userName);
     $statement->bindValue(':email', $email);
-    $statement->bindValue(':password', $hashedPassword);
+    $statement->bindValue(':password_hash', $hashedPassword);
     $statement->execute();
 
-    header("Location: /to-do-list/index.php?action=login&registered=true");
+    header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=login_view&registered=true");
     exit;
 } catch (PDOException $e) {
-    header("Location: /to-do-list/index.php?action=register&error=db_error");
+    header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=db_error");
     exit;
 }
 
