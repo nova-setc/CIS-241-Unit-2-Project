@@ -4,9 +4,9 @@
 $userId = $_SESSION['user_id'];
 $dueDate = filter_input(INPUT_POST, 'due_date');
 
-// Ensure due date is strictly greater than today
+// Ensure due date is at least today's date
 $today = date('Y-m-d');
-if ($dueDate <= $today) {
+if ($dueDate < $today) {
     header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=dashboard_view&error=invalid_due_date");
     exit;
 }
