@@ -37,6 +37,8 @@ if (isset($_GET['error'])) {
     <title>📝 To-Do List: Register</title>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="#">
@@ -51,6 +53,7 @@ if (isset($_GET['error'])) {
         </div>
     </nav>
 
+    <!-- Register Form -->
     <main>
         <form class="auth-form" action="/CIS-241-Unit-2-Project/to-do-list/index.php?action=register" method="POST">
             <h2>Register</h2>

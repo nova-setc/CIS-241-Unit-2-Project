@@ -1,6 +1,4 @@
 <?php 
-require_once(__DIR__ . '/../models/db.php');
-
 // Retrieve form data
 // Important to strip username so that users do 
 // enter html tags or anything suspicious

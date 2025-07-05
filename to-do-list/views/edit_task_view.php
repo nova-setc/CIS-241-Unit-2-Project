@@ -8,6 +8,8 @@
     <title>📝 To-Do List: Edit Task</title>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="#">
@@ -22,6 +24,7 @@
         </div>
     </nav>
 
+    <!-- Edit Task Form -->
     <main>
         <form class="edit-task-form" action="/CIS-241-Unit-2-Project/to-do-list/index.php?action=update_task&id=<?php echo $task['task_id']; ?>" method="POST">
             <h2>Edit Task</h2>

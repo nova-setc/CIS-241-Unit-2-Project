@@ -16,10 +16,6 @@ if (isset($_GET['error']) && $_GET['error'] === 'delete_task_failed') {
     echo '<p class="error-message">Failed to delete task. Please try again.</p>';
 }
 
-if (isset($_GET['success']) && $_GET['success'] === 'task_deleted') {
-    echo '<p class="success-message">Task deleted successfully!</p>';
-}
-
 if (isset($_GET['success']) && $_GET['success'] === 'task_updated') {
     echo '<p class="success-message">Task updated successfully!</p>';
 }
@@ -59,6 +55,8 @@ $allUserTasks = getTasksByUserId($userId);
     <title>📝 To-Do List: Dashboard</title>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="#">
@@ -73,6 +71,7 @@ $allUserTasks = getTasksByUserId($userId);
         </div>
     </nav>
 
+    <!-- Main content: Dashboard -->
     <main>
         <h1 class="dashboard-title">Welcome, <?php echo htmlspecialchars($userName); ?>!</h1>
         <p class="dashboard-subtitle">You have logged into an account using this browser <span id="visit-count"><?php echo htmlspecialchars($visitCount); ?> times.</span></p>
