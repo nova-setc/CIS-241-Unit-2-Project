@@ -1,3 +1,9 @@
+# CIS-241-Unit-2-Project
+# Nova Denton-Parry
+# Benjamin Terzic
+# Tristan Lake
+# Bruce Schulz
+
 # 📝 To-Do List App 
 
 A simple and clean to‑do list web application built with PHP, MySQL, and the MVC architectural pattern. Users can register, log in, and manage personal tasks with session‑based authentication. 
