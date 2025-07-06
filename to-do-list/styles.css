@@ -123,14 +123,6 @@ main {
     animation: fade-in-from-bottom 1s ease-out forwards;
 }
 
-.task-container.completed {
-    text-decoration: line-through;
-    color: #9ca3af;
-    background-color: #9ca3af;
-    box-shadow: 0 2px 8px rgba(156, 163, 175, 0.1);
-    border: 1px solid #d1d5db;
-}
-
 form h2 {
     text-align: center;
 }
@@ -359,5 +351,17 @@ form button:hover {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+
+/* ------ MEDIA QUERIES -------- */
+@media (max-width: 1200px) {
+    .add-task-form {
+        width: 90%;
+    }
+
+    .task-list-container {
+        width: 100%;
     }
 }
