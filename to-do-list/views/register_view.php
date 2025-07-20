@@ -9,6 +9,9 @@ if (isset($_GET['error'])) {
         case 'password_mismatch':
             echo '<p class="error-message">Passwords do not match.</p>';
             break;
+        case 'invalid_password':
+            echo '<p class="error-message">Password must be at least 8 characters with one number.</p>';
+            break;
         case 'email_exists':
             echo '<p class="error-message">Email already exists.</p>';
             break;

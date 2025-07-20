@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Retrieve form data
 // Important to strip username so that users do 
 // enter html tags or anything suspicious
@@ -25,6 +25,13 @@ try {
         (!$confirm_password)
     ) {
         header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=missing_fields");
+        exit;
+    }
+
+    // Password meets requirements?
+    $password_regex = '/^(?=.*\d).{8,}$/'; // At least 1 digit and minimum 8 characters
+    if (!preg_match($password_regex, $password)) {
+        header("Location: /CIS-241-Unit-2-Project/to-do-list/index.php?action=register_view&error=invalid_password");
         exit;
     }
 
