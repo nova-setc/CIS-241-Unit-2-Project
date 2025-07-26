@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 07, 2025 at 01:40 AM
+-- Generation Time: Jul 26, 2025 at 06:38 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -36,14 +36,14 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `date_created` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`task_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tasks`
 --
 
 INSERT INTO `tasks` (`task_id`, `user_id`, `title`, `due_date`, `date_created`) VALUES
-(9, 4, 'Code some PHP?', '2025-08-15', '2025-07-06 18:34:18');
+(14, 9, 'Code some php! This time with REGEX!', '2025-10-23', '2025-07-20 10:06:16');
 
 -- --------------------------------------------------------
 
@@ -61,15 +61,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `email`, `password_hash`, `date_added`) VALUES
-(5, 'taskmaster2', 'taskmaster2@hotmail.com', '$2y$10$MeE7aeno5ZBbZuul.ThGnuZNBWT6jyC4QBMn9FpT7rxh2jOQ5PwqG', '2025-07-06 19:49:28'),
-(4, 'TaskMaster', 'taskmaster@hotmail.com', '$2y$10$pcdsOplFfnB67/Xpf9UgBuFgIO8eD5I30t8ovchOJrYo1YU5gwLFi', '2025-07-05 14:53:35');
+(10, 'TaskMaster2', 'taskmaster2@hotmail.com', '$2y$10$vgrDJivZn7gznye.4W87QeVsLbM3/xYnh.9QXJr/HGHx9GvzNYY2m', '2025-07-26 13:25:51'),
+(9, 'TaskMaster', 'taskmaster@hotmail.com', '$2y$10$5ox55jKsE3y7Gw.gUjJly.D7PDJiuMdrTeXR.UjtQclGE1vQibC4y', '2025-07-20 10:05:49');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
